@@ -113,12 +113,3 @@ class LinkedList:
 
 linked_list = LinkedList()
 
-linked_list.insert_at_beginning(10)
-linked_list.insert_at_beginning(5)
-linked_list.insert_at_end(20)
-linked_list.insert_at_end(30)
-linked_list.insert_at_index(3, 25)
-linked_list.delete_with_key(25)
-linked_list.delete_at_index(0)
-# linked_list.delete_at_index(0)
-linked_list.print_list()
