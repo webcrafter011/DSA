@@ -101,18 +101,18 @@ for i in arr:
 - Drop constants and non-dominant terms.
 
 ### Examples
-# Example 1: Simple Loop
+### Example 1: Simple Loop
 ```python
 for i in range(n):
     print(i)  # O(n)
 ```
-# Example 2: Nested Loop
+### Example 2: Nested Loop
 ```python
 for i in range(n):
     for j in range(n):
         print(i, j)  # O(n^2)
 ```
-# Example 3: Recursive Function
+### Example 3: Recursive Function
 ```python
 def fibonacci(n):
     if n <= 1:
