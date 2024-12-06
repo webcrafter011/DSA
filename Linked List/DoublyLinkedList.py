@@ -4,6 +4,7 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None  # Pointer to the next node
+        self.prev = None
 
 
 class LinkedList:
@@ -12,22 +13,28 @@ class LinkedList:
     def __init__(self):
         self.head = None  # The head of the list
 
-    def insert_at_beginning(self, data):
-        """Insert a new node at the beginning of the list."""
-        new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
-
     def insert_at_end(self, data):
         """Insert a new node at the end of the list."""
         new_node = Node(data)
+
         if not self.head:  # If the list is empty
             self.head = new_node
             return
         current = self.head
+        previousNode = None
         while current.next:  # Traverse to the end of the list
             current = current.next
-        current.next = new_node
+
+        new_node.next = None
+        new_node.prev = previousNode
+        new_node = current
+
+    def insert_at_beginning(self, data):
+        """Insert a new node at the beginning of the list."""
+        new_node = Node(data)
+        new_node.next = self.head
+        new_node.prev = None
+        self.head = new_node
 
     def insert_at_index(self, index, data):
         new_node = Node(data)
