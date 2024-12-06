@@ -18,11 +18,20 @@ class Queue:
             self.tail = new_node
 
     def dequeue(self):
+        if not self.head:
+            print("Queue is empty. Cannot dequeue.")
+            return None
+        dequeued_data = self.head.data
         self.head = self.head.next
-        return
+        if not self.head:  # If the queue becomes empty
+            self.tail = None
+        return dequeued_data
 
     def peek(self):
-        return self.head
+        if not self.head:
+            print("Queue is empty. Nothing to peek.")
+            return None
+        return self.head.data
 
     def print_q(self):
         current = self.head
@@ -30,15 +39,3 @@ class Queue:
             print(current.data, end=" -> ")
             current = current.next
         print("None")
-
-
-q = Queue()
-
-q.enqueue(10)
-q.enqueue(20)
-q.enqueue(30)
-q.enqueue(40)
-q.enqueue(50)
-q.dequeue()
-q.dequeue()
-q.print_q()
