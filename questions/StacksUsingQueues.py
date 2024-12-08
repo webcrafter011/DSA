@@ -19,8 +19,7 @@ class Queue:
 
     def dequeue(self):
         if not self.head:
-            print("Queue is Empty.")
-            return
+            return None
         dequeue_data = self.head.data
         self.head = self.head.next
         if not self.head:
@@ -29,9 +28,11 @@ class Queue:
 
     def peek(self):
         if not self.head:
-            print("List is Empty.")
-            return
-        return self.head
+            return None
+        return self.head.data
+
+    def is_empty(self):
+        return self.head is None
 
     def print_q(self):
         current = self.head
@@ -41,13 +42,6 @@ class Queue:
         print("None")
 
 
-# TODO:
-# void push(int x) Pushes element x to the top of the stack.
-# int pop() Removes the element on the top of the stack and returns it.
-# int top() Returns the element on the top of the stack.
-# boolean empty() Returns true if the stack is empty, false otherwise.
-
-
 class Stack:
     def __init__(self):
         self.q1 = Queue()
@@ -55,12 +49,21 @@ class Stack:
 
     def push(self, x):
         self.q2.enqueue(x)
+        while not self.q1.is_empty():
+            self.q2.enqueue(self.q1.dequeue())
+        self.q1, self.q2 = self.q2, self.q1  # Swap the queues
 
-        while self.q1:
-            self.q2.enqueue(self.q2.dequeue())
-            
-        self.q1, self.q2 = self.q2, self.q1
-        
+    def pop(self):
+        if self.q1.is_empty():
+            print("Stack is Empty.")
+            return None
+        return self.q1.dequeue()
 
-    def print_stack(self):
-        
+    def top(self):
+        if self.q1.is_empty():
+            print("Stack is Empty.")
+            return None
+        return self.q1.peek()
+
+    def empty(self):
+        return self.q1.is_empty()
