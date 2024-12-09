@@ -1,6 +1,5 @@
 import json
 
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -76,10 +75,6 @@ bst.insert(7)
 bst.insert(9)
 bst.insert(5)
 
-# Print the tree structure in text form
+
 print_tree(bst.root)
 
-# Convert the tree to a JSON string for visualization
-tree_dict = traverse(bst.root)
-print("\nTree in JSON format:")
-print(json.dumps(tree_dict, indent=2))
