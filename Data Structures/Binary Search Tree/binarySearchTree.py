@@ -1,4 +1,4 @@
-# Full fledged implementation of BInary Tree in python
+# Full fledged implementation of BInary Tree 
 
 class Node:
     def __init__(self, data):
