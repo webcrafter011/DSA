@@ -6,5 +6,5 @@ This repository contains all the Data Structures and Algorithms (DSA) problems I
 
 Whether you’re a beginner looking to understand basic algorithms or an advanced learner revisiting key concepts, I hope this collection will serve as a valuable resource.
 
-Happy coding! 🚀
+Happy coding! 
 
