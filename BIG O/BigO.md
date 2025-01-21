@@ -30,7 +30,7 @@ arr = [1, 2, 3]
 print(arr[0])  # O(1)
 ```
 
-### 2. Logarithmic Time - O(log n)
+### 2. Logarithmic Time - O(log n) (Base 2 log)
 - **Description**: The runtime increases logarithmically as the input size grows.
 - **Example**: Binary Search.
 ```python
